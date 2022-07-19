@@ -11,12 +11,14 @@
 </head>
 <body class="p-3 mb-2 bg-dark text-white">
     <div class="container">
-        <div class="btn-group" role="group">
-            <a href="/" type="button" class="btn btn-outline-light btn-sm">Início</a>
-            <a href="/login" type="button" class="btn btn-outline-light btn-sm">Login</a>
-            <a href="/sobre" type="button" class="btn btn-outline-light btn-sm">Sobre</a>
-            <a href="/contato" type="button" class="btn btn-outline-light btn-sm">Contato</a>
-        </div>
+        <center>
+            <div class="btn-group" role="group">
+                <a href="/" type="button" class="btn btn-outline-light btn-sm">Início</a>
+                <a href="/login" type="button" class="btn btn-outline-light btn-sm">Login</a>
+                <a href="/sobre" type="button" class="btn btn-outline-light btn-sm">Sobre</a>
+                <a href="/contato" type="button" class="btn btn-outline-light btn-sm">Contato</a>
+            </div>
+        </center>
         <hr>
         @yield("body")
 
