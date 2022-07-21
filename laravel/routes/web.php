@@ -16,3 +16,4 @@ Route::post("/clientes/cadastrar", [CustomerController::class, "store"])->name("
 
 Route::get("/ordens", [OrderController::class, "index"])->name("orders.index");
 Route::get("/ordens/nova", [OrderController::class, "create"])->name("orders.create");
+Route::post("/ordens/nova", [OrderController::class, "store"])->name("orders.store");
