@@ -17,7 +17,13 @@ class Order extends Model
         "accessories",
         "reported_problem",
         "service_description",
+        "observations",
         "status",
         "price",
     ];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }

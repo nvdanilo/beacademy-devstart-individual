@@ -14,16 +14,24 @@
     <table class="table table-dark table-hover table-bordered table-striped">
         <thead class="text-center">
             <tr>
-                <th scope="col">Código</th>
+                <th scope="col">OS</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Status</th>
+                <th scope="col">Valor</th>
             </tr>
         </thead>
         <tbody class="text-center">
             @foreach($orders as $order)
                 <tr>
                     <th>{{ $order->id }}</th>
+                    <th>{{ $order->customer->name }}</th>
+                    <th>{{ $order->status }}</th>
+                    <th>R${{ $order->price }}</th>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
+    <div class="justify-content-center pagination success">
+        {{ $orders->links("pagination::bootstrap-4") }}
+    </div>
 @endsection

@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {   
-    public function __construct(Order $order)
-    {
-        $this->model = $order;
+    protected $customer;
+    protected $order;
+
+    public function __construct(Customer $customer, Order $order)
+    {   
+        $this->customer = $customer;
+        $this->order = $order;
     }
 
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::paginate(10);
 
         return view("order.index", compact("orders"));
     }

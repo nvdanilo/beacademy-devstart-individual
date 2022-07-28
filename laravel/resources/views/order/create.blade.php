@@ -42,6 +42,10 @@
             <textarea type="text" class="form-control" id="service_description" name="service_description"></textarea>
         </div>
         <div class="mb-2">
+            <label for="observations" class="form-label">Observações:</label>
+            <textarea type="text" class="form-control" id="observations" name="observations"></textarea>
+        </div>
+        <div class="mb-2">
             <label for="status" class="form-label">Status:</label>
             <input type="text" class="form-control" id="status" name="status">
         </div>

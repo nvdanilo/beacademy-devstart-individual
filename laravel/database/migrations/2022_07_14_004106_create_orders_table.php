@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("customer_id")
+            ->constrained("customers")
+            ->onDelete("CASCADE")
+            ->onUpdate("CASCADE");
             $table->string("device");
             $table->string("brand");
             $table->string("model");
@@ -22,8 +26,10 @@ return new class extends Migration
             $table->text("accessories");
             $table->text("reported_problem");
             $table->text("service_description");
+            $table->text("observations");
             $table->string("status");
             $table->double("price");
+            $table->boolean("active")->default(true);
             $table->timestamps();
         });
     }
