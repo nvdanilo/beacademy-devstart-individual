@@ -23,6 +23,10 @@ class CustomerFactory extends Factory
             "email" => $this->faker->unique()->safeEmail(),
             "phone" => $this->faker->phoneNumber(),
             "birthday" => $this->faker->date(),
+            "address" => $this->faker->address(),
+            "district" => $this->faker->locale(),
+            "city" => $this->faker->city(),
+            "state" => $this->faker->country(),
         ];
     }
 }

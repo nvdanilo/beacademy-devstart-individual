@@ -37,6 +37,22 @@
             <label for="birthday" class="form-label">Data de Aniversário:</label>
             <input type="text" class="form-control" id="birthday" name="birthday">
         </div>
+        <div class="mb-2">
+            <label for="address" class="form-label">Endereço:</label>
+            <input type="text" class="form-control" id="address" name="address">
+        </div>
+        <div class="mb-2">
+            <label for="district" class="form-label">Bairro:</label>
+            <input type="text" class="form-control" id="district" name="district">
+        </div>
+        <div class="mb-2">
+            <label for="city" class="form-label">Cidade:</label>
+            <input type="text" class="form-control" id="city" name="city">
+        </div>
+        <div class="mb-2">
+            <label for="state" class="form-label">Estado:</label>
+            <input type="text" class="form-control" id="state" name="state">
+        </div>
         <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
     </form>
 @endsection

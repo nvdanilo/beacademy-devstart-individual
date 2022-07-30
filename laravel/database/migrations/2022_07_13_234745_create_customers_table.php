@@ -23,6 +23,10 @@ return new class extends Migration
             $table->string("phone");
             $table->timestamp("phone_verified_at")->nullable();
             $table->date("birthday");
+            $table->string("address");
+            $table->string("district");
+            $table->string("city");
+            $table->string("state");
             $table->timestamps();
         });
     }
