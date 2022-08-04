@@ -16,7 +16,22 @@ class UserTest extends TestCase
         $this->assertTrue(true);
     }
 
-    public function test_create_user()
+    public function test_create_customer()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function test_store_customer()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function test_create_order()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function test_store_order()
     {
         $this->assertTrue(true);
     }
