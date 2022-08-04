@@ -7,8 +7,6 @@ use App\Models\Customer;
 
 class CustomerController extends Controller
 {   
-    protected $model;
-
     public function __construct(Customer $customer)
     {
         $this->model = $customer;
@@ -58,7 +56,7 @@ class CustomerController extends Controller
             return redirect()->route("customers.index");
         }
 
-        $data = $request->only("name", "nickname", "cpf", "email", "phone", "birthday");
+        $data = $request->only("name", "nickname", "cpf", "email", "phone", "birthday", "address", "district", "city", "state");
 
         $customer->update($data);
 

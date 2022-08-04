@@ -11,17 +11,59 @@
 
 </head>
 <body class="p-3 mb-2 bg-secondary text-white">
-    <div class="container">
-        <center>
-            <div class="btn-group col-4" role="group">
-                <a href="/" type="button" class="btn btn-dark btn-sm">Início</a>
-                <a href="/login" type="button" class="btn btn-dark btn-sm">Login</a>
-                <a href="/sobre" type="button" class="btn btn-dark btn-sm">Sobre</a>
-                <a href="/contato" type="button" class="btn btn-dark btn-sm">Contato</a>
+<div class="container w-90 p-3">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-10">
+                            <ul class="navbar-nav mr-auto">
+                                @if(Auth::user())
+                                <li class="nav-item active">
+                                    <a class="nav-link text-white" href="/ordens">Ordens</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-white">|</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/clientes">Clientes</a>
+                                </li>
+                                @endif
+                            </ul>
+                        </div>
+                        <div class="col-2">
+                            <ul class="navbar-nav mr-auto">
+                                @if(Auth::user())
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">{{ Auth::user()->name }}</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white">|</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <x-responsive-nav-link class="nav-link text-white" :href="route('logout')"
+                                                    onclick="event.preventDefault();
+                                                                this.closest('form').submit();">
+                                                {{ __('Sair') }}
+                                            </x-responsive-nav-link>
+                                        </form>
+                                    </li>                        
+                                @else
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="{{ route('login') }}">Entrar</a>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </center>
-        <hr>
-        @yield("body")
+        </nav>
+
+            @yield('body')
 
     </div>
 </body>

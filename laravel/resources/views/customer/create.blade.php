@@ -1,7 +1,7 @@
 @extends("template.home")
 @section("title", "OS | Cadastrar")
 @section("body")
-    <h1>CADASTRAR NOVO CLIENTE</h1>
+    <h1 class="mt-3 d-md-flex justify-content-md-center">CADASTRAR NOVO CLIENTE</h1>
 
     @if($errors->any())
         <div class="alert alert-danger" role="alert">

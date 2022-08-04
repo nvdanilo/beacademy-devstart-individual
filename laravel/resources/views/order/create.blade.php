@@ -1,7 +1,7 @@
 @extends("template.home")
-@section("tile", "OS | Criar")
+@section("title", "OS | Criar Ordem")
 @section("body")
-    <h1>CRIAR NOVA ORDEM</h1>
+    <h1 class="mt-3 d-md-flex justify-content-md-center">CRIAR NOVA ORDEM</h1>
 
     @if($errors->any())
         <div class="alert alert-danger" role="alert">
@@ -13,6 +13,15 @@
 
     <form action="{{ route('orders.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        <div class="mb-2">
+            <label for="customer_id" class="form-label">Cliente:</label>
+            <select class="form-select" aria-label="Default select example" name="customer_id">
+                <option selected>Escolha um cliente</option>
+                @foreach($customers as $customer)
+                    <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                @endforeach
+            </select>
+        </div>
         <div class="mb-2">
             <label for="device" class="form-label">Dispositivo:</label>
             <input type="text" class="form-control" id="device" name="device">
