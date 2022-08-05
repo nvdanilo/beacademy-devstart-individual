@@ -104,8 +104,7 @@
     </tbody>
 </table>
 
-<div class="py-4">
-
-</div>
-{{ $orders->links() }}
+    <div class="justify-content-center pagination success">
+        {{ $orders->links("pagination::bootstrap-4") }}
+    </div>
 @endsection

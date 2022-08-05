@@ -19,7 +19,7 @@ class OrderController extends Controller
 
     public function index()
     {
-        $orders = Order::paginate(10);
+        $orders = Order::paginate(5);
         return view("order.index", compact("orders"));
     }
 
